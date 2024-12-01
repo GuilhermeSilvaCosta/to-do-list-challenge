@@ -43,3 +43,12 @@ export const ButtonText = styled.Text`
   background-color: transparent;
   font-weight: ${({ theme }) => theme.typography.weights.bold};
 `;
+
+export const CancelButton = styled.TouchableOpacity`
+`;
+
+export const CancelButtonText = styled.Text`
+  background-color: transparent;
+  font-weight: ${({ theme }) => theme.typography.weights.regular};
+  color: ${({ theme }) => theme.colors.error};
+`;

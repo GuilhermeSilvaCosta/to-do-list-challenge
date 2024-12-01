@@ -11,10 +11,8 @@ export function* signIn({ payload }: any) {
     if (email != 'admin@admin.com' || password != 'admin') 
       throw new Error('Falha na autenticação');
 
-    setTimeout(() => {
-      put(signInSuccess());
-      replace('TaskList');
-    }, 10000)
+    yield put(signInSuccess());
+    replace('TaskList');
     
   } catch (e) {
     Alert.alert('Falha na autenticação', 'Verifique seus dados');

@@ -18,6 +18,17 @@ export const Title = styled.Text`
   margin-bottom: ${({ theme }) => theme.spacing.xl}px;
 `;
 
+export const SignupButton = styled.TouchableOpacity`
+  align-items: center;
+  margin: ${({ theme }) => theme.spacing.lg}px;
+`;
+
+export const SignupButtonText = styled.Text`
+  font-size: ${({ theme }) => theme.typography.sizes.md}px;
+  font-weight: ${({ theme }) => theme.typography.weights.bold};
+  color: ${({ theme }) => theme.colors.text.secondary};
+`;
+
 export const TasksIcons = styled(FontAwesome5).attrs(({
   name: "tasks",
   size: 48

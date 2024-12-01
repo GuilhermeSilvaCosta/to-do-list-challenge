@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '@types';
 
 import { Button } from '~/components/Button';
 import { Input } from '~/components/Input';
 import { signInRequest } from '~/store/modules/auth/actions';
 import { RootState } from '@types';
 
-import { Container, Content, TasksIcons } from './styles';
+import { Container, Content, TasksIcons, SignupButton, SignupButtonText } from './styles';
 
-export const LoginScreen = () => {
+type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
+
+export const LoginScreen = ({ navigation }: Props) => {
   const dispatch = useDispatch();
   const { loading } = useSelector((state: RootState) => state.auth)
   

@@ -11,6 +11,7 @@ const getStatus = (status: String): String => {
   if (TaskStatusEnum.PENDING === status) return 'PENDENTE';
   if (TaskStatusEnum.IN_PROGRESS === status) return 'EM ANDAMENTO';
   if (TaskStatusEnum.COMPLETED === status) return 'FINALIZADA';
+  if (TaskStatusEnum.CANCELED === status) return 'CANCELADA';
 
   return status;
 }

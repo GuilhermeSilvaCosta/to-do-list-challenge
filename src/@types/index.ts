@@ -1,7 +1,8 @@
 export enum TaskStatusEnum {
   PENDING = 'PENDING',
   IN_PROGRESS = 'IN_PROGRESS',
-  COMPLETED = 'COMPLETED'
+  COMPLETED = 'COMPLETED',
+  CANCELED = 'CANCELED'
 }
 
 export type User = {
@@ -31,6 +32,13 @@ export type RootStackParamList = {
   TaskList: undefined;
   TaskDetails: undefined;
 };
+
+export type TabsParamList = {
+  Pending: { status: string };
+  InProgress: { status: string };
+  All: { status: string };
+  CreateTask: undefined;
+}
 
 export type AuthState = {
   readonly loading: boolean;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, TouchableOpacity, Text } from 'react-native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -10,9 +10,25 @@ import { updateTaskRequest } from '~/store/modules/task/actions'
 import { TaskStatusEnum, RootStackParamList, RootState } from '@types';
 
 import { Container, Content, Title, Description, 
-  StatusSelector, StatusButton, ButtonText} from './styles';
+  StatusSelector, StatusButton, ButtonText,
+  CancelButton, CancelButtonText } from './styles';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'TaskDetails'>;
+
+export const HeaderRightButton = () => {
+  const dispatch = useDispatch();
+
+  const handleCancel = () => {
+    dispatch(updateTaskRequest(TaskStatusEnum.CANCELED, ''));
+  }
+
+  return (
+    <CancelButton onPress={handleCancel}>
+      <CancelButtonText>Cancelar tarefa</CancelButtonText>
+    </CancelButton>
+  );
+}
+
 
 export const TaskDetailsScreen = ({ navigation }: Props) => {
   const dispatch = useDispatch();

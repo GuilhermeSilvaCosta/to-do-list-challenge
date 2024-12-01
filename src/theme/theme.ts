@@ -14,6 +14,7 @@ export const theme = {
       pending: '#FFC107',
       in_progress: '#17A2B8',
       completed: '#28A745',
+      canceled: '#DC3545'
     },
     error: '#DC3545',
     border: '#E9ECEF',

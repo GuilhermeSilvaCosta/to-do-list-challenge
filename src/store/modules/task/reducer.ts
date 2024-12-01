@@ -1,5 +1,5 @@
 import { produce } from 'immer';
-import { Task, TaskState } from '@types';
+import { Task, TaskState, TaskStatusEnum } from '@types';
 
 type TaskAction = {
   type: string;
