@@ -7,7 +7,6 @@ import { LoginScreen } from '~/screens/LoginScreen';
 import { TaskListScreen } from '~/screens/TaskListScreen';
 import { TaskDetailsScreen, HeaderRightButton } from '~/screens/TaskDetailScreen';
 import { CreateTaskScreen } from '~/screens/CreateTaskScreen'
-import { CreateUserScreen } from '~/screens/CreateUserScreen';
 import { RootStackParamList, RootState } from '@types';
 
 export const navigationRef = createNavigationContainerRef<RootStackParamList>();
@@ -35,23 +34,14 @@ export const Navigation = () => {
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator initialRouteName="Login">
         <>
-          {!signed && <>
+          {!signed &&
             <Stack.Screen
               name="Login"
               component={LoginScreen}
               options={{
                 headerShown: false,
               }}
-            />
-
-            <Stack.Screen
-              name="CreateUser"
-              component={CreateUserScreen}
-              options={{
-                headerShown: false,
-              }}
-            />
-          </>}
+            />}
 
           <Stack.Screen
             name="TaskList"
